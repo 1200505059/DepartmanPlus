@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<title>supLayout</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+    <a href="~/lib/bootstrap/dist/css/bootstrap.css.map"></a>
+    <a href="~/lib/bootstrap/dist/css/bootstrap.min.css.map"></a>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <!-- Sidebar -->
+    <div class="w3-sidebar w3-light-primary w3-bar-block" style="width:15%">
+        <h3 class="w3-bar-item">MENÜ</h3>
+        <a href="/department/Index/" class="w3-bar-item w3-button">DEPARTMANLAR</a>
+        <a href="/Personel/Index/" class="w3-bar-item w3-button">PERSONELLER</a>
+        <a href="#" class="w3-bar-item w3-button">HAKKIMIZDA</a>
+        <a href="#" class="w3-bar-item w3-button">ÇIKIŞ</a>
+    </div>
+
+    <!-- Page Content -->
+    <div style="margin-left:15%">
+
+        <div class="w3-container "style="background-color:dodgerblue;height:50px;">
+        </div>
+
+        <div class="w3-container">
+            @RenderBody()
+        </div>
+
+    </div>
+   
+</body>
+</html>
+

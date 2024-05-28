@@ -1,0 +1,36 @@
+﻿@model departmanlar
+
+@{
+    ViewData["Title"] = "Departman Detayı";
+    Layout = "~/Views/Shared/_supLayout.cshtml"; //Varsayılan layout dosyanızı belirtin
+}
+<br />
+<br />
+<div class="card border-primary" style="max-height: 80vh; overflow-y: auto;">
+    <div class="card-header bg-primary text-white">Departman Detayı</div>
+    <div class="card-body">
+        @if (Model != null)
+        {
+            <div class="form-group">
+                <label for="departmentName" class="font-weight-bold">Departman Adı</label>
+                <input type="text" class="form-control form-control-lg" id="departmentName" value="@Model.departmanAd" readonly>
+            </div>
+            <div class="form-group">
+                <label for="departmentDescription" class="font-weight-bold">Açıklama</label>
+                <textarea class="form-control form-control-lg" id="departmentDescription" rows="5" readonly>@Model.Aciklama</textarea>
+            </div>
+            <!-- İhtiyacınıza göre diğer departman özelliklerini buraya ekleyebilirsiniz -->
+        }
+        else
+        {
+            <p>Belirtilen ID'ye sahip departman bulunamadı.</p>
+        }
+    </div>
+</div>
+<br />
+<a class="btn btn-primary" href="/department/Index" style="margin-left:20px;">Geri</a>
+
+
+
+
+

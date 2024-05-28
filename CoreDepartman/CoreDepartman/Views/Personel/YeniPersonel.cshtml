@@ -1,0 +1,45 @@
+﻿@model personel
+@{
+    ViewData["Title"] = "YeniPersonel";
+    Layout = "~/Views/Shared/_supLayout.cshtml";
+}
+
+<br />
+<br />
+<h3 style="text-align:center;color:green;">PERSONEL EKLEME SAYFASI</h3>
+<br />
+
+<form class="card-form container" method="post">
+    <div class="form-group" style="margin-bottom: 20px;">
+        <label for="CardID" style="font-weight: bold;">Personel Ad</label>
+        <input type="text" class="form-control" asp-for="ad" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+    <div class="form-group" style="margin-bottom: 20px;">
+        <label for="CardID" style="font-weight: bold;">Personel Soyad</label>
+        <input type="text" class="form-control" asp-for="soyad" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+    <div class="form-group" style="margin-bottom: 20px;">
+        <label for="CardID" style="font-weight: bold;">Personel Şehir</label>
+        <input type="text" class="form-control" asp-for="sehir" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    </div>
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Kategoriler</label>
+        <div class="col-sm-10">
+            <select asp-for="departmentid" class="form-control" aria-label="Default select example">
+                <option disabled selected>Departman Seçiniz...</option>
+                @foreach (var item in ViewBag.departm)
+                {
+                    <option value="@item.id">@item.departmanAd</option>
+
+                }
+
+            </select>
+        </div>
+    </div>
+
+
+    <div class="form-group" style="margin-top: 15px;">
+        <button type="submit" class="btn btn-success" style="padding: 10px 20px; border: none; border-radius: 5px; color: #fff; cursor: pointer;"> EKLE</button>
+    </div>
+</form>
+

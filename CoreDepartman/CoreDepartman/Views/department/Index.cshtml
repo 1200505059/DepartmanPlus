@@ -1,0 +1,32 @@
+﻿@using CoreDepartman.Models;
+@model List<departmanlar>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_supLayout.cshtml";
+}
+
+<br />
+<br />
+<table class="table table-bordered text-center">
+    <tr>
+        <th>ID</th>
+        <th>DEPARTMAN</th>
+        <th>AÇIKLAMA</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+        <th>DETAY</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.departmanAd</td>
+            <td>@(item.Aciklama.Length > 50 ? item.Aciklama.Substring(0, 50) + "..." : item.Aciklama)</td>
+            <td><a href="/department/SilDepartman/@item.id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/department/GuncelleDepartman/@item.id" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/department/Detay/@item.id" class="btn btn-primary">Detay</a></td>
+        </tr>
+    }
+</table>
+
+<td><a href="/department/YeniDepartman/" class="btn btn-success">DEPARTMAN EKLE</a></td>
